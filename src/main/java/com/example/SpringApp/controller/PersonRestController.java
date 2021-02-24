@@ -20,19 +20,14 @@ public class PersonRestController {
         this.productService = productService;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/get-product")
     public Iterable<Product> getAllProduct(){
 
         return productService.get();
     }
 
 
-    @PostMapping()
-    public Product addProduct(@RequestBody Product product){
 
-        return productService.save(product);
-
-    }
 
 
 

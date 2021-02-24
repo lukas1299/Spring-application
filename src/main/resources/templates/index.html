@@ -7,8 +7,6 @@
         table, th, td {
             border: 1px solid black;
         }
-
-
     </style>
 </head>
 <body>
@@ -22,22 +20,18 @@
         <th>Name</th>
         <th>Price</th>
     </tr>
-    <tr th:each="produkt: ${produkty}">
+    <tr th:each="produkt: ${products}">
         <td th:text="${produkt.getName()}">
         <td th:text="${produkt.getPrice()}">
     </tr>
 </table>
 
-<!--<form th:action="@{/add}" th:object="${addProduct}" method="post">
-    <label><strong>Podaj nazwa: </strong></label>
-    <input id="getname" type="text" th:field="*{name}"><br>
+<form th:action="@{/add-product}" th:object="${newProduct}" method="post">
+    <p>Name: <input type="text" th:field="*{name}"></p>
+    <p>Price: <input type="text" th:field="*{price}"></p>
+    <p><input type="submit" value="add new product"></p>
 
-    <label><strong>Podaj cene: </strong></label>
-    <input id="getprice" type="text" th:field="*{price}"><br>
-
-    <input type="submit" value="Add">
-
-</form>-->
+</form>
 
 
 </body>

@@ -10,13 +10,16 @@ import javax.persistence.*;
 public class Product {
 
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
     private String name;
     private double price;
 
     public Product() {
+    }
+    public Product(String name){
+        this.name = name;
     }
 
     public Product(String name, double price) {
